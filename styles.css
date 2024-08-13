@@ -48,11 +48,9 @@ body {
     color: darkslategrey;
     font-size: 20px;
     max-width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
     margin-bottom: 20px;
+    
     overflow: hidden;
 }
 

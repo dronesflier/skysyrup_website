@@ -26,32 +26,31 @@ body {
 
 .maintext {
     text-align: center;
-    position: relative;
     color: darkslategrey;
     font-size: 24px;
-    padding-top: 60px; /* Adjust padding as needed */
-    display: flex;
-    max-width: 60%;
-    justify-content: center;
+    padding-top: 60px;
     margin: auto;
-    right: 0;
-    left: 0;
+    max-width: 60%;
 }
+
 
 .bottomtext {
     text-align: center;
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     color: darkslategrey;
     font-size: 20px;
     max-width: 60%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: auto;
-    right: 0;
-    left: 0;
-    margin-bottom: 20px; /* Adds some space at the bottom */
+    margin-bottom: 20px;
+    overflow: hidden;
 }
+
 
 .sidebar a {
     display: block;

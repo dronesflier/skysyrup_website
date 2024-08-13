@@ -3,46 +3,54 @@ body {
     cursor: url('mousecursor.png'), auto;
     background-repeat: repeat;
     font-family: 'Comic Mono', monospace;
-    position: relative; /* Needed for absolute positioning of child elements */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh; /* Add this line to ensure the body takes up at least the full viewport height */
-  }
-  
-.titles {
-    position: absolute;
-    top: 2vh; /* Adjusted value based on the desired percentage from the top */
-    left: 50%;
-    transform: translateX(-50%);
-    color:rgb(25, 54, 54);
-    text-align: center;
-    font-size: 50px;
 }
-.maintext {
-    position: absolute;
-    left: 50%;
-    top: calc(5vh + 50px + 4vh); /* Adjusted the 2vh value to set the desired percentage distance between titles and maintext */
-    transform: translateX(-50%);
-    color:rgb(25, 54, 54);
-    color:darkslategrey;
 
-    text-align: center;
-    font-size: 24px;
-}
-.bottomtext {
-    color: darkslategrey;
-    text-align: center;
-    font-size: 20px;
-    margin-top: auto;
-    max-width: 60%;
-    margin: 0 auto;
-  }
 .sidebar {
-    width: 10%;
+    width: 200px; /* Adjusted for a fixed width */
     padding: 20px;
     background-color: #a969f8;
-    flex-direction: column; /* Add this line */
+    height: 100vh; /* Ensures it takes full height */
+    position: fixed; /* Sticks the sidebar to the side */
+    top: 0;
+    left: 0;
+}
+
+.titles {
+    margin-top: 2vh; /* Adjusted for margin instead of absolute positioning */
+    text-align: center;
+    color: rgb(25, 54, 54);
+    font-size: 50px;
+}
+
+.maintext {
+    text-align: center;
+    position: relative;
+    color: darkslategrey;
+    font-size: 24px;
+    padding-top: 60px; /* Adjust padding as needed */
+    display: flex;
+    max-width: 60%;
+    justify-content: center;
+    margin: auto;
+    right: 0;
+    left: 0;
+}
+
+.bottomtext {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    color: darkslategrey;
+    font-size: 20px;
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin-bottom: 20px; /* Adds some space at the bottom */
 }
 
 .sidebar a {
@@ -55,9 +63,4 @@ body {
 
 .sidebar a:hover {
     background-color: #9241f3;
-}
-
-.content {
-    flex-grow: 1;
-    padding: 20px;
 }

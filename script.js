@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
       '<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" alt="never gonna give you up link">a completely normal link that you should click</a>',
       "You, [subject name here], must be the pride of [subject hometown here]",
       "<p alt=\"I\'m making a note here: HUGE SUCCESS!!\">This Was A Triumph</p>",
-      "You wouldn't download a car..."
+      "You wouldn't download a car...",
+      "Fuck Furball",
+      "hatsune miku does not talk to british people",
+      '<img src="assets/snashrt.jpg" alt="sans undertale in a comic telling the reader that hrt is going to make them pretty">'
+
 
   ];
 

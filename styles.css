@@ -11,17 +11,22 @@ body {
     width: 200px; /* Adjusted for a fixed width */
     padding: 20px;
     background-color: #a969f8;
-    height: 100vh; /* Ensures it takes full height */
     position: fixed; /* Sticks the sidebar to the side */
-    top: 0;
-    left: 0;
+
 }
 
 .titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     margin-top: 2vh; /* Adjusted for margin instead of absolute positioning */
     text-align: center;
+    left: 0;
+    right: 0;
     color: rgb(25, 54, 54);
     font-size: 50px;
+    max-width: 60%;
 }
 
 .maintext {
@@ -30,7 +35,7 @@ body {
     font-size: 24px;
     padding-top: 60px;
     margin: auto;
-    max-width: 60%;
+    max-width: 55%;
 }
 
 

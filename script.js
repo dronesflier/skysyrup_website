@@ -47,3 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   randomTextElement.innerHTML = phrases[getRandomInt(phrases.length)];
 });
+
+function copyfunction() {
+  navigator.clipboard.writeText('<a href="https://skysyrup.dev/" alt="skysyrup link"><img src="https://skysyrup.dev/assets/skysyrup_webbutton.png" alt="web button for skysyrup.dev"></a>');
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+} 

@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>16</title>
-  </head>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css"
-  />
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link rel="icon" type="image/x-icon" href="cloud.png" />
-  <audio
-    id="background-audio"
-    src="assets/uy74FPxS.wav"
-    autoplay
-    hidden
-  ></audio>
-  <h1>16/16/16/16</h1>
-  <meta http-equiv="refresh" content="3;url=https://www.nomanssky.com/" />>
-
-  <script>
-    window.addEventListener('load', function() {
-        var audio = document.getElementById('background-audio');
-        audio.muted = true;
-        audio.play().then(function() {
-            // Unmute the audio after a brief delay
-            setTimeout(function() {
-                audio.muted = false;
-            }, 1000); // Adjust delay as needed
-        }).catch(function() {
-            console.log('Autoplay was prevented.');
-        });
+<head>
+  <title>16</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css"/>
+<link rel="stylesheet" type="text/css" href="16.css" />
+<link rel="icon" type="image/x-icon" href="cloud.png" />
+<audio id="background-audio" src="assets/uy74FPxS.wav" autoplay hidden></audio>
+<div class="content" style="text">
+  <h1 class="text" data-text="16/16/16/16">16/16/16/16</h1>
+</div>
+<meta http-equiv="refresh" content=3;url="https://www.nomanssky.com/" />
+<script>
+  window.addEventListener('load', function () {
+    var audio = document.getElementById('background-audio');
+    audio.muted = true;
+    audio.play().then(function () {
+      // Unmute the audio after a brief delay
+      setTimeout(function () {
+        audio.muted = false;
+      }, 1000); // Adjust delay as needed
+    }).catch(function () {
+      console.log('Autoplay was prevented.');
     });
+  });
+
+
 </script>
-  </script>
+
 </html>

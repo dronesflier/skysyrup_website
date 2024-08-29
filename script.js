@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "You wouldn't download a car...",
       "Fuck Furball",
       "hatsune miku does not talk to british people",
-      '<img src="assets/snashrt.jpg" alt="sans undertale in a comic telling the reader that hrt is going to make them pretty">',
+      '<img src="assets/catgirl.png" alt="a meme with the text \"yes i\'m a catgirl yes i love other catgirls its 2008. get over it\" with a anime-style female drawing in the background">',
       "Mankind Is Dead.<br>Blood Is Fuel.<br>Hell Is Full.",
       "THY END IS NOW!!!",
       "<img src='assets/thesilly.jpg' alt='cyn from murder drones with the caption \"I have personally killed 12 TRILLION PEOPLE\"'>"

@@ -54,3 +54,45 @@ function copyfunction() {
   // Alert the copied text
   alert("Copied the text: " + copyText.value);
 } 
+
+const cats = ['Susie', 'Calvin', 'Helmut'];
+
+const catImages = {
+    'Susie': ['susie/IMG_2047.png', 'susie/IMG_3250.png', 'susie/IMG_3803.png'],
+    'Calvin': ['calvin/69196053068__FD6FC2E9-EB00-4772-AA28-B8836CE462BF.png', 'calvin/IMG_1639.png', 'calvin/IMG_1816.png'],
+    'Helmut': ['helmut/IMG_0310.png', 'helmut/IMG_1631.png', 'helmut/IMG_1828.png']
+};
+
+let correctCat = '';
+
+function startGame() {
+    document.getElementById('result').textContent = '';
+    const randomCat = cats[Math.floor(Math.random() * cats.length)];
+    correctCat = randomCat;
+    const images = catImages[randomCat];
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    document.getElementById('cat-image').src = randomImage;
+    generateOptions();
+}
+
+function generateOptions() {
+    const optionsDiv = document.getElementById('options');
+    optionsDiv.innerHTML = '';
+    const shuffledCats = cats.sort(() => 0.5 - Math.random());
+    shuffledCats.forEach(cat => {
+        const button = document.createElement('button');
+        button.textContent = cat;
+        button.onclick = () => checkAnswer(cat);
+        optionsDiv.appendChild(button);
+    });
+}
+
+function checkAnswer(selectedCat) {
+    if (selectedCat === correctCat) {
+        document.getElementById('result').textContent = 'Correct!';
+    } else {
+        document.getElementById('result').textContent = `Wrong! It was ${correctCat}.`;
+    }
+}
+
+window.onload = startGame;

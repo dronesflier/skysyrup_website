@@ -83,3 +83,31 @@ body {
     text-align: center;
     color: rgb(124, 233, 73);
 }
+
+#cat-image {
+    display: block;
+    margin: 20px auto;
+}
+
+#options {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#options button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#result {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#next-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+}

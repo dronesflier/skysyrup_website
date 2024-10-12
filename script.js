@@ -136,7 +136,6 @@ const catImages = {
         "calvin/IMG_3315.png",
         "calvin/IMG_3648.png",
         "calvin/IMG_3698.png",
-        "calvin/IMG_3873.png",
         "calvin/IMG_4086.png"
     ],
     'Helmut': [

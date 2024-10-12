@@ -8,11 +8,10 @@ body {
 }
 
 .sidebar {
-    width: 200px; /* Adjusted for a fixed width */
+    width: 200px;
     padding: 20px;
     background-color: #a969f8;
-    position: fixed; /* Sticks the sidebar to the side */
-
+    position: fixed;
 }
 
 .titles {
@@ -20,10 +19,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 2vh; /* Adjusted for margin instead of absolute positioning */
+    margin-top: 2vh;
     text-align: center;
-    left: 0;
-    right: 0;
     color: rgb(25, 54, 54);
     font-size: 50px;
     max-width: 60%;
@@ -35,7 +32,6 @@ body {
     font-size: 24px;
     padding-top: 60px;
     margin: auto;
-
     max-width: 55%;
 }
 
@@ -45,24 +41,18 @@ body {
     font-size: 12px;
     padding-top: 60px;
     margin: auto;
-
     max-width: 55%;
 }
 
 .bottomtext {
     text-align: center;
-    bottom: 0;
-    left: 0;
-    right: 0;
     color: darkslategrey;
     font-size: 14px;
     max-width: 60%;
     margin: auto;
     margin-bottom: 20px;
-    
     overflow: hidden;
 }
-
 
 .sidebar a {
     display: block;
@@ -87,6 +77,8 @@ body {
 #cat-image {
     display: block;
     margin: 20px auto;
+    max-width: 100%;
+    height: auto;
 }
 
 #options {
@@ -94,20 +86,29 @@ body {
     margin-bottom: 20px;
 }
 
-#options button {
+#options button,
+#next-button {
     margin: 5px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
+    background-color: #a969f8;
+    color: #ffffff;
+    border: 2px solid #9241f3;
+    border-radius: 8px;
+    cursor: url('mousecursor.png'), auto;
+    font-family: 'Comic Mono', monospace;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#options button:hover,
+#next-button:hover {
+    background-color: #9241f3;
+    transform: scale(1.05);
 }
 
 #result {
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
-}
-
-#next-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
+    color: darkslategray;
 }

@@ -153,7 +153,6 @@ const catImages = {
         "helmut/IMG_1828.png",
         "helmut/IMG_3509.png",
         "helmut/IMG_3671.png",
-        "helmut/IMG_3902.png",
         "helmut/IMG_3998.png",
         "helmut/IMG_4063.png",
         "helmut/IMG_0309.png",

@@ -161,8 +161,7 @@
     max-width: 55%;
 }
 .bottombar {
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-top: 50px;
     position: fixed;
     width: 15vh;
     bottom: 10vh;
@@ -210,4 +209,3 @@
 .sidebar a:hover {
     color: #ffe6ea; /* Ensures readability on hover */
 }
-

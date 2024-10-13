@@ -37,12 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
       "<img src='assets/thesilly.jpg' alt='cyn from murder drones with the caption \"I have personally killed 12 TRILLION PEOPLE\"'>",
       '\"But there are multiple cats in this image\" - &#129299;',
       "let's just say i'm. yknow. straight up surfin' it",
-      "I'm not a cat, I'm a catgirl!!!!!!!!!!!!!!!!!!!!!!",
+      "world is mine",
       "did you know that on average, a cat will spend 2 to 3 years of its life cleaning itself?",
       "i am making 99% of these facts up",
       "human, i remember your transgenders",
       "did you know that cats are the most popular pet in the united states?",
-      "human, i remembr you're genocides"
+      "human, i remembr you're genocides",
+      "hey, it's me! hi me!",
+      "<href='https://ddosecrets.com/' <p>https://ddosecrets.com/</p> :3",
+      "i know what you are",
+
 
   ];
 
@@ -191,10 +195,12 @@ function generateOptions() {
     shuffledCats.forEach(cat => {
         const button = document.createElement('button');
         button.textContent = cat;
+        button.classList.add('btn', 'btn-primary'); // Added for styling
         button.onclick = () => checkAnswer(cat);
         optionsDiv.appendChild(button);
     });
 }
+
 
 function checkAnswer(selectedCat) {
     if (selectedCat === correctCat) {
@@ -205,3 +211,4 @@ function checkAnswer(selectedCat) {
 }
 
 window.onload = startGame;
+

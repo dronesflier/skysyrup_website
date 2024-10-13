@@ -211,3 +211,59 @@
     color: #ffe6ea; /* Ensures readability on hover */
 }
 
+/* Button Base Styling */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-family: 'cherish', 'font', monospace; /* Ensure it matches your existing font */
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #4d4d80; /* Medium Blue/Purple */
+    color: #ffe6ea;            /* Very Light Pink */
+}
+
+/* Primary Button Hover Effect */
+.btn-primary:hover {
+    background-color: #e6a1cf; /* Light Pink */
+    color: #131626;            /* Dark Background */
+    transform: scale(1.05);    /* Slightly enlarge on hover */
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: #131626; /* Dark Background */
+    color: #e6a1cf;            /* Light Pink */
+    border: 2px solid #4d4d80; /* Optional: Adds a border matching the primary button */
+}
+
+/* Secondary Button Hover Effect */
+.btn-secondary:hover {
+    background-color: #4d4d80; /* Medium Blue/Purple */
+    color: #ffe6ea;            /* Very Light Pink */
+    transform: scale(1.05);    /* Slightly enlarge on hover */
+}
+
+/* Optional: Disabled Button Styling */
+.btn:disabled {
+    background-color: #4d4d80;
+    color: #ffe6ea;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Change color of visited links */
+.maintext a:visited {
+    color:#ffe6ea ; /* Change this to your desired visited color */
+}
+/* Change color of links on hover */
+.maintext a:hover {
+    color: #e6a1cf; /* Change this to your desired hover color */
+}
+.maintext a {
+    color:#4d4d80;
+}

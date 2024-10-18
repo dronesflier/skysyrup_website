@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const img = document.createElement('img');
     img.src = 'assets/comet.gif?cacheBust=' + new Date().getTime();
-    img.style.width = `${TILE_SIZE}px`; // Use scaling logic similar to stars
+    img.style.width = `${TILE_SIZE * 2}px`; // Use scaling logic similar to stars
     img.style.height = 'auto'; // Maintain aspect ratio
     img.style.position = 'absolute';
     img.style.left = startX + 'px';
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(() => {
     placeComet();
-  }, Math.floor(Math.random() * 10000) + 2000);
+  }, Math.floor(Math.random() * 10000) + 200);
 
   function placeStars(amount) {
     for (let i = 0; i < amount; i++) {

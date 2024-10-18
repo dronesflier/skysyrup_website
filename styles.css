@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #131626;
+    z-index: -2;
   }
   
   /* Prevent image blurring */
@@ -19,6 +20,7 @@
     font-weight: normal; /* Specify the font weight */
     font-style: normal; /* Specify the font style */
     font-display: swap; /* Optional: Improves font loading behavior */
+    z-index: 9999;
 }
 
 @font-face {
@@ -27,6 +29,7 @@
     font-weight: bold; /* Specify the font weight */
     font-style: normal; /* Specify the font style */
     font-display: swap; /* Optional: Improves font loading behavior */
+    z-index: 9999;
 }
 
   /* Container Styling */
@@ -149,6 +152,7 @@
     padding-top: 60px;
     margin: auto;
     max-width: 55%;
+    z-index: 2;
 }
 
   .maintext {
@@ -159,6 +163,7 @@
     padding-top: 60px;
     margin: auto;
     max-width: 55%;
+    z-index: 9999;
 }
 .bottombar {
     margin-bottom: 20px;
@@ -189,13 +194,14 @@
     margin: auto;
     margin-bottom: 20px;
     overflow: hidden;
+    z-index: 2;
 }
 .sidebar {
     margin-left: 20px;
     margin-top: 20px;
     width: 200px;
     padding: 20px;
-    position: absolute;   
+    position: absolute !important;   
 }
 
 /* Corrected Sidebar Link Colors */
@@ -266,4 +272,97 @@
 }
 .maintext a {
     color:#4d4d80;
+}
+/* Content Container Styling */
+.content-container {
+  position: absolute;
+  top: 32px;    /* Below the top border */
+  left: 32px;   /* Beside the left border */
+  right: 32px;  /* Beside the right border */
+  bottom: 32px; /* Above the bottom border */
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  padding: 0;   /* Remove default padding */
+  z-index: 5;   /* Ensure it sits above background elements */
+}
+
+/* Adjust Sidebar Positioning */
+.content-container .sidebar {
+  position: absolute;
+  top: 20px;
+  width: 200px;
+  margin: 0;
+  z-index: 3; /* Higher z-index to ensure it appears above other content */
+}
+
+/* Adjust Title and Main Text Positioning */
+.content-container .titletext,
+.content-container .maintext,
+.content-container .bottomtext {
+
+  z-index: 2;
+}
+
+/* Ensure titletext and maintext have appropriate spacing */
+.content-container .titletext {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content-container .maintext {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Bottom Text Positioning */
+.content-container .bottomtext {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 20px; /* Optional spacing at the bottom */
+}
+
+/* Preserve Maintext Styling */
+.maintext {
+  font-family: '000webfont', 'font', monospace;
+  color: #e6a1cf;
+  font-size: 24px;
+  line-height: 1.5;
+  z-index: 2; /* Ensure it appears above other content */
+  margin: 0 auto; /* Center the text */
+}
+
+/* Adjust Links in Maintext */
+.maintext a {
+  color: #4d4d80;
+  text-decoration: none;
+}
+
+.maintext a:visited {
+  color: #ffe6ea;
+}
+
+.maintext a:hover {
+  color: #e6a1cf;
+}
+
+.bottomtext img {
+  margin: 10px auto;
+}
+
+/* Adjust Z-Index for Overlapping Elements */
+.corner, .border {
+  z-index: 1;
+}
+
+.content-container {
+  z-index: 2;
+}
+
+.content-container .sidebar {
+  z-index: 3;
+}
+
+.comet {
+  position: relative;
+  pointer-events: none; /* So it doesn't interfere with user interactions */
 }

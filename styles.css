@@ -1,289 +1,348 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #131626;
-    z-index: -2;
-  }
-  
-  /* Prevent image blurring */
-  img, .corner, .border .tile {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor; /* For IE */
-  }
-  
-  @font-face {
-    font-family: 'cherish'; /* Name you'll use in CSS */
-    src: url('assets/Cherish.ttf') format('truetype'); /* Path to the font file */
-    font-weight: normal; /* Specify the font weight */
-    font-style: normal; /* Specify the font style */
-    font-display: swap; /* Optional: Improves font loading behavior */
-    z-index: 9999;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #131626;
+  z-index: -2;
+}
+
+/* Prevent image blurring */
+img,
+.corner,
+.border .tile {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* For IE */
 }
 
 @font-face {
-    font-family: '000webfont'; /* Name you'll use in CSS */
-    src: url('assets/basiic.ttf') format('truetype'); /* Path to the font file */
-    font-weight: bold; /* Specify the font weight */
-    font-style: normal; /* Specify the font style */
-    font-display: swap; /* Optional: Improves font loading behavior */
-    z-index: 9999;
+  font-family: 'cherish';
+  /* Name you'll use in CSS */
+  src: url('assets/Cherish.ttf') format('truetype');
+  /* Path to the font file */
+  font-weight: normal;
+  /* Specify the font weight */
+  font-style: normal;
+  /* Specify the font style */
+  font-display: swap;
+  /* Optional: Improves font loading behavior */
+  z-index: 9999;
 }
 
-  /* Container Styling */
-  #pixel-art-container {
-    font-family: 'cherish', 'font', monospace;
-    position: relative;
-    width: 100vw; /* Fill the full viewport width */
-    height: 100vh; /* Fill the full viewport height */
-    min-width: 256px;
-    min-height: 256px;
-    margin: 0 auto;
-    background-color: #131626; /* Background color for your pixel art */
-    overflow: hidden; /* Prevent overflow */
-  }
-  
-  /* Corner Styling */
-  .corner {
-    position: absolute;
-    width: 32px; /* Width of your corner tile */
-    height: 32px; /* Height of your corner tile */
-    background-size: cover;
-    /* Prevent scaling */
-    flex-shrink: 0;
-  }
-  
-  .top-left {
-    top: 0;
-    left: 0;
-    background-image: url('tiles/top-left.png'); /* Replace with your corner tile */
-  }
-  
-  .top-right {
-    top: 0;
-    right: 0;
-    background-image: url('tiles/top-right.png');
-  }
-  
-  .bottom-left {
-    bottom: 0;
-    left: 0;
-    background-image: url('tiles/bottom-left.png');
-  }
-  
-  .bottom-right {
-    bottom: 0;
-    right: 0;
-    background-image: url('tiles/bottom-right.png');
-  }
-  
-  /* Border Containers */
-  .border {
-    position: absolute;
-    background-size: cover;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  
-  .border.top,
-  .border.bottom {
-    height: 32px; /* Height of your horizontal border tile */
-    left: 32px; /* Starting after the top-left corner */
-    right: 32px; /* Ending before the top-right corner */
-  }
-  
-  .border.top {
-    top: 0;
-    background-image: url('tiles/top-border.png'); /* Replace with your border tile */
-  }
-  
-  .border.bottom {
-    bottom: 0;
-    background-image: url('tiles/bottom-border.png');
-  }
-  
-  .border.left,
-  .border.right {
-    width: 32px; /* Width of your vertical border tile */
-    top: 32px; /* Starting after the top-left corner */
-    bottom: 32px; /* Ending before the bottom-left corner */
-    flex-direction: column;
-  }
-  
-  .border.left {
-    left: 0;
-    background-image: url('tiles/left-border.png');
-  }
-  
-  .border.right {
-    right: 0;
-    background-image: url('tiles/right-border.png');
-  }
-  
-  /* Border Tile Styling */
-  .border .tile {
-    flex: 0 0 auto;
-    width: 32px; /* Width of your tile */
-    height: 32px; /* Height of your tile */
-    background-size: cover;
-    /* Prevent scaling */
-  }
-  
-  /* Content Styling */
-  .content {
-    color: #e6a1cf;
-    font-family: 'cherish', 'font', monospace;
-    position: absolute;
-    top: 32px;
-    left: 32px;
-    right: 32px;
-    bottom: 32px;
-    /* Add any additional styling for your pixel art content */
-    /* To ensure no scaling, use pixel units or appropriate CSS */
-  }
-
-  .titletext {
-    font-family: 'cherish', 'font', monospace;
-    text-align: center;
-    color: #e6a1cf;
-    font-size: 24px;
-    padding-top: 60px;
-    margin: auto;
-    max-width: 55%;
-    z-index: 2;
+@font-face {
+  font-family: '000webfont';
+  /* Name you'll use in CSS */
+  src: url('assets/basiic.ttf') format('truetype');
+  /* Path to the font file */
+  font-weight: bold;
+  /* Specify the font weight */
+  font-style: normal;
+  /* Specify the font style */
+  font-display: swap;
+  /* Optional: Improves font loading behavior */
+  z-index: 9999;
 }
 
-  .maintext {
-    font-family: '000webfont', 'font', monospace;
-    text-align: center;
-    color: #e6a1cf;
-    font-size: 24px;
-    padding-top: 60px;
-    margin: auto;
-    max-width: 55%;
-    z-index: 9999;
+/* Container Styling */
+#pixel-art-container {
+  font-family: 'cherish', 'font', monospace;
+  position: relative;
+  width: 100vw;
+  /* Fill the full viewport width */
+  height: 100vh;
+  /* Fill the full viewport height */
+  min-width: 256px;
+  min-height: 256px;
+  margin: 0 auto;
+  background-color: #131626;
+  /* Background color for your pixel art */
+  overflow: hidden;
+  /* Prevent overflow */
 }
+
+/* Corner Styling */
+.corner {
+  position: absolute;
+  width: 32px;
+  /* Width of your corner tile */
+  height: 32px;
+  /* Height of your corner tile */
+  background-size: cover;
+  /* Prevent scaling */
+  flex-shrink: 0;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  background-image: url('tiles/top-left.png');
+  /* Replace with your corner tile */
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background-image: url('tiles/top-right.png');
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background-image: url('tiles/bottom-left.png');
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background-image: url('tiles/bottom-right.png');
+}
+
+/* Border Containers */
+.border {
+  position: absolute;
+  background-size: cover;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.border.top,
+.border.bottom {
+  height: 32px;
+  /* Height of your horizontal border tile */
+  left: 32px;
+  /* Starting after the top-left corner */
+  right: 32px;
+  /* Ending before the top-right corner */
+}
+
+.border.top {
+  top: 0;
+  background-image: url('tiles/top-border.png');
+  /* Replace with your border tile */
+}
+
+.border.bottom {
+  bottom: 0;
+  background-image: url('tiles/bottom-border.png');
+}
+
+.border.left,
+.border.right {
+  width: 32px;
+  /* Width of your vertical border tile */
+  top: 32px;
+  /* Starting after the top-left corner */
+  bottom: 32px;
+  /* Ending before the bottom-left corner */
+  flex-direction: column;
+}
+
+.border.left {
+  left: 0;
+  background-image: url('tiles/left-border.png');
+}
+
+.border.right {
+  right: 0;
+  background-image: url('tiles/right-border.png');
+}
+
+/* Border Tile Styling */
+.border .tile {
+  flex: 0 0 auto;
+  width: 32px;
+  /* Width of your tile */
+  height: 32px;
+  /* Height of your tile */
+  background-size: cover;
+  /* Prevent scaling */
+}
+
+/* Content Styling */
+.content {
+  color: #e6a1cf;
+  font-family: 'cherish', 'font', monospace;
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  /* Add any additional styling for your pixel art content */
+  /* To ensure no scaling, use pixel units or appropriate CSS */
+}
+
+.titletext {
+  font-family: 'cherish', 'font', monospace;
+  text-align: center;
+  color: #e6a1cf;
+  font-size: 24px;
+  padding-top: 60px;
+  margin: auto;
+  max-width: 55%;
+  z-index: 2;
+}
+
+.maintext {
+  font-family: '000webfont', 'font', monospace;
+  text-align: center;
+  color: #e6a1cf;
+  font-size: 24px;
+  padding-top: 60px;
+  margin: auto;
+  max-width: 55%;
+  z-index: 9999;
+}
+
 .bottombar {
-    margin-bottom: 20px;
-    margin-left: 20px;
-    position: fixed;
-    width: 15vh;
-    bottom: 10vh;
-    text-align: center;
-    color: rgb(124, 233, 73);
+  margin-bottom: 20px;
+  margin-left: 20px;
+  position: fixed;
+  width: 15vh;
+  bottom: 10vh;
+  text-align: center;
+  color: rgb(124, 233, 73);
 }
 
 .smalltext {
-    font-family: '000webfont', 'font', monospace;
-    text-align: center;
-    color: #e6a1cf;
-    font-size: 12px;
-    padding-top: 60px;
-    margin: auto;
-    max-width: 55%;
+  font-family: '000webfont', 'font', monospace;
+  text-align: center;
+  color: #e6a1cf;
+  font-size: 12px;
+  padding-top: 60px;
+  margin: auto;
+  max-width: 55%;
 }
 
 .bottomtext {
-    font-family: '000webfont', 'font', monospace;
-    text-align: center;
-    color: #e6a1cf;
-    font-size: 14px;
-    max-width: 60%;
-    margin: auto;
-    margin-bottom: 20px;
-    overflow: hidden;
-    z-index: 2;
+  font-family: '000webfont', 'font', monospace;
+  text-align: center;
+  color: #e6a1cf;
+  font-size: 14px;
+  max-width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+  z-index: 2;
 }
+
 .sidebar {
-    margin-left: 20px;
-    margin-top: 20px;
-    width: 200px;
-    padding: 20px;
-    position: absolute !important;   
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 200px;
+  padding: 20px;
+  position: absolute !important;
 }
 
 /* Corrected Sidebar Link Colors */
 .sidebar a {
-    display: block;
-    color: #e6a1cf; /* Corrected color with '#' */
-    padding: 10px;
-    text-decoration: none;
-    font-size: 20px;
+  display: block;
+  color: #e6a1cf;
+  /* Corrected color with '#' */
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 .sidebar a:hover {
-    color: #ffe6ea; /* Ensures readability on hover */
+  color: #ffe6ea;
+  /* Ensures readability on hover */
 }
 
 /* Button Base Styling */
 .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
-    font-family: 'cherish', 'font', monospace; /* Ensure it matches your existing font */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  font-family: 'cherish', 'font', monospace;
+  /* Ensure it matches your existing font */
 }
 
 /* Primary Button */
 .btn-primary {
-    background-color: #4d4d80; /* Medium Blue/Purple */
-    color: #ffe6ea;            /* Very Light Pink */
+  background-color: #4d4d80;
+  /* Medium Blue/Purple */
+  color: #ffe6ea;
+  /* Very Light Pink */
 }
 
 /* Primary Button Hover Effect */
 .btn-primary:hover {
-    background-color: #e6a1cf; /* Light Pink */
-    color: #131626;            /* Dark Background */
-    transform: scale(1.05);    /* Slightly enlarge on hover */
+  background-color: #e6a1cf;
+  /* Light Pink */
+  color: #131626;
+  /* Dark Background */
+  transform: scale(1.05);
+  /* Slightly enlarge on hover */
 }
 
 /* Secondary Button */
 .btn-secondary {
-    background-color: #131626; /* Dark Background */
-    color: #e6a1cf;            /* Light Pink */
-    border: 2px solid #4d4d80; /* Optional: Adds a border matching the primary button */
+  background-color: #131626;
+  /* Dark Background */
+  color: #e6a1cf;
+  /* Light Pink */
+  border: 2px solid #4d4d80;
+  /* Optional: Adds a border matching the primary button */
 }
 
 /* Secondary Button Hover Effect */
 .btn-secondary:hover {
-    background-color: #4d4d80; /* Medium Blue/Purple */
-    color: #ffe6ea;            /* Very Light Pink */
-    transform: scale(1.05);    /* Slightly enlarge on hover */
+  background-color: #4d4d80;
+  /* Medium Blue/Purple */
+  color: #ffe6ea;
+  /* Very Light Pink */
+  transform: scale(1.05);
+  /* Slightly enlarge on hover */
 }
 
 /* Optional: Disabled Button Styling */
 .btn:disabled {
-    background-color: #4d4d80;
-    color: #ffe6ea;
-    opacity: 0.6;
-    cursor: not-allowed;
+  background-color: #4d4d80;
+  color: #ffe6ea;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
+
 /* Change color of visited links */
 .maintext a:visited {
-    color:#ffe6ea ; /* Change this to your desired visited color */
+  color: #ffe6ea;
+  /* Change this to your desired visited color */
 }
+
 /* Change color of links on hover */
 .maintext a:hover {
-    color: #e6a1cf; /* Change this to your desired hover color */
+  color: #e6a1cf;
+  /* Change this to your desired hover color */
 }
+
 .maintext a {
-    color:#4d4d80;
+  color: #4d4d80;
 }
+
 /* Content Container Styling */
 .content-container {
   position: absolute;
-  top: 32px;    /* Below the top border */
-  left: 32px;   /* Beside the left border */
-  right: 32px;  /* Beside the right border */
-  bottom: 32px; /* Above the bottom border */
-  overflow-y: auto; /* Enables vertical scrolling if content overflows */
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-  padding: 0;   /* Remove default padding */
-  z-index: 5;   /* Ensure it sits above background elements */
+  top: 32px;
+  /* Below the top border */
+  left: 32px;
+  /* Beside the left border */
+  right: 32px;
+  /* Beside the right border */
+  bottom: 32px;
+  /* Above the bottom border */
+  overflow-y: auto;
+  /* Enables vertical scrolling if content overflows */
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
+  padding: 0;
+  /* Remove default padding */
+  z-index: 5;
+  /* Ensure it sits above background elements */
 }
 
 /* Adjust Sidebar Positioning */
@@ -292,7 +351,8 @@
   top: 20px;
   width: 200px;
   margin: 0;
-  z-index: 3; /* Higher z-index to ensure it appears above other content */
+  z-index: 3;
+  /* Higher z-index to ensure it appears above other content */
 }
 
 /* Adjust Title and Main Text Positioning */
@@ -318,7 +378,8 @@
 .content-container .bottomtext {
   margin-top: 40px;
   text-align: center;
-  margin-bottom: 20px; /* Optional spacing at the bottom */
+  margin-bottom: 20px;
+  /* Optional spacing at the bottom */
 }
 
 /* Preserve Maintext Styling */
@@ -327,8 +388,10 @@
   color: #e6a1cf;
   font-size: 24px;
   line-height: 1.5;
-  z-index: 2; /* Ensure it appears above other content */
-  margin: 0 auto; /* Center the text */
+  z-index: 2;
+  /* Ensure it appears above other content */
+  margin: 0 auto;
+  /* Center the text */
 }
 
 /* Adjust Links in Maintext */
@@ -350,7 +413,8 @@
 }
 
 /* Adjust Z-Index for Overlapping Elements */
-.corner, .border {
+.corner,
+.border {
   z-index: 1;
 }
 
@@ -364,5 +428,39 @@
 
 .comet {
   position: relative;
-  pointer-events: none; /* So it doesn't interfere with user interactions */
+  pointer-events: none;
+  /* So it doesn't interfere with user interactions */
+}
+
+/* Additional Styles for Dynmap iframe */
+.dynmap-container {
+  margin-top: 20px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dynmap-container iframe {
+  width: 100%;
+  height: 600px;
+  /* Adjust height as needed */
+  border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dynmap-container iframe {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dynmap-container iframe {
+    height: 300px;
+  }
+}
+ul { /* yea yea yea */
+  list-style: none;
+
 }

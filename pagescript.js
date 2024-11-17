@@ -176,3 +176,27 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = new Audio("assets/lofiwebsite1.mp3");
+  let isPlaying = false;
+  audio.loop = true;
+
+  const playButton = document.getElementById("play-music");
+
+  playButton.addEventListener("click", () => {
+      if (isPlaying) {
+          audio.pause();
+          playButton.textContent = "play";
+          isPlaying = false;
+      } else {
+          audio.play().catch((error) => console.error("Failed to play audio:", error));
+          playButton.textContent = "pause";
+          isPlaying = true;
+      }
+  });
+
+  // Clean up audio when navigating away
+  window.addEventListener("beforeunload", () => {
+      audio.pause();
+  });
+});

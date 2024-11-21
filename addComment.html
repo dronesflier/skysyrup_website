@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>submit guestbook entry to skysyrup.dev</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        async function fetchCaptcha() {
+            try {
+                const response = await fetch('https://guestbook.skysyrup.dev/generate_captcha');
+                const captchaId = response.headers.get('Captcha-ID');
+                const blob = await response.blob();
+
+                document.getElementById('captcha-img').src = URL.createObjectURL(blob);
+                document.getElementById('captcha-id').value = captchaId;
+            } catch (error) {
+                console.error('Error fetching CAPTCHA:', error);
+            }
+        }
+
+        async function submitComment(event) {
+            event.preventDefault();
+
+            // Validate that the required fields are filled
+            const nameField = document.getElementById('name');
+            const messageField = document.getElementById('message');
+
+            if (!nameField.value.trim()) {
+                alert('Name field is required.');
+                nameField.focus();
+                return;
+            }
+
+            if (!messageField.value.trim()) {
+                alert('Message field is required.');
+                messageField.focus();
+                return;
+            }
+
+            const commentData = {
+                name: nameField.value.trim(),
+                crunchy: document.getElementById('crunchy').value,
+                websiteLink: document.getElementById('website-link').value,
+                email: document.getElementById('email').value,
+                message: messageField.value.trim(),
+                captcha: document.getElementById('captcha').value,
+                captcha_id: document.getElementById('captcha-id').value,
+            };
+
+            try {
+                const response = await fetch('https://guestbook.skysyrup.dev/comments', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(commentData),
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Comment submitted successfully!');
+                    window.location.href = "guestbook.html"
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                console.error('Error submitting comment:', error);
+                alert('An error occurred while submitting the comment.');
+            }
+        }
+
+        // Fetch a CAPTCHA when the page loads
+        window.onload = fetchCaptcha;
+    </script>
+    <style>
+        /* Input and Textarea Base Styling */
+        input[type="text"],
+        input[type="url"],
+        input[type="email"],
+        textarea {
+            background-color: #131626;
+            /* Dark background */
+            color: #e6a1cf;
+            /* Light text */
+            border: 2px solid #4d4d80;
+            /* Medium Blue/Purple border */
+            font-family: '000webfont', 'font', monospace;
+            font-size: 16px;
+            padding: 10px;
+            width: calc(100% - 24px);
+            /* Adjusted for padding and border */
+            border-radius: 5px;
+            /* Slightly rounded edges */
+            margin-bottom: 10px;
+            /* Space between fields */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Input and Textarea Focus Styling */
+        input[type="text"]:focus,
+        input[type="url"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #e6a1cf;
+            /* Light Pink on focus */
+            box-shadow: 0 0 5px #e6a1cf;
+            /* Subtle glow effect */
+            outline: none;
+            /* Remove default focus outline */
+        }
+
+        /* Textarea Specific Styling */
+        textarea {
+            min-height: 100px;
+            /* Set a reasonable minimum height */
+            resize: vertical;
+            /* Allow vertical resizing only */
+        }
+
+        /* Placeholder Text Styling */
+        input::placeholder,
+        textarea::placeholder {
+            color: #4d4d80;
+            /* Subtle hint color */
+            opacity: 0.8;
+            /* Slightly transparent */
+        }
+
+        #captcha-img {
+            display: block;
+            margin: 10px auto;
+            /* Centers the image horizontally */
+            max-width: 100%;
+            /* Ensures the image is responsive */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="pixel-art-container">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <div class="border top"></div>
+        <div class="border bottom"></div>
+        <div class="border left"></div>
+        <div class="border right"></div>
+
+        <div class="content-container">
+            <div class="sidebar">
+                <div id="music-player-container">
+                    <button id="play-music" class="btn btn-primary">play</button>
+                </div>
+            </div>
+
+            <div class="titletext">
+                <h1>submit your own comment!</h1>
+            </div>
+
+            <div class="maintext">
+                <form id="comment-form" onsubmit="submitComment(event)">
+                    <div>
+                        <label for="name">Name (r):</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="crunchy" style="display: block; margin-bottom: 10px; font-family: 'cherish', 'font', monospace; color: #e6a1cf;">
+                            Crunchy (Emoji):
+                        </label>
+                        <select id="crunchy" name="crunchy" style="
+                            background-color: #131626;
+                            color: #e6a1cf;
+                            border: 2px solid #4d4d80;
+                            font-family: 'cherish', 'font', monospace;
+                            font-size: 16px;
+                            padding: 10px;
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 10px;
+                            transition: border-color 0.3s, box-shadow 0.3s;">
+                            <option value="">🌍 Select a region...</option>
+                            <option value="🇪🇺">🇪🇺 European Union</option>
+                            <option value="🇺🇸">🇺🇸 United States</option>
+                            <option value="🇨🇳">🇨🇳 China</option>
+                            <option value="🇮🇳">🇮🇳 India</option>
+                            <option value="🇯🇵">🇯🇵 Japan</option>
+                            <option value="🇦🇺">🇦🇺 Australia</option>
+                            <option value="🇷🇺">🇷🇺 Russia</option>
+                            <option value="🇿🇦">🇿🇦 South Africa</option>
+                            <option value="🇸🇦">🇸🇦 Middle East</option>
+                            <option value="🌍">🌍 teh wolrd</option>
+                        </select>
+                    </div>
+                    
+                    
+                    <div>
+                        <label for="website-link">Website Link:</label>
+                        <input type="url" id="website-link" name="websiteLink">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div>
+                        <label for="message">Message (r):</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div>
+                        <label for="captcha">CAPTCHA:</label>
+                        <img id="captcha-img" alt="click 'get captcha' to get the captcha"
+                            style="display:block; margin-bottom:10px;">
+                        <input type="text" id="captcha" name="captcha" required>
+                        <input type="hidden" id="captcha-id" name="captcha_id">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-secondary" onclick="fetchCaptcha()">get CAPTCHA</button>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+                </form>
+                <br><br>
+                <p>by clicking "submit" you agree that the data you have entered will be saved to a server and accessible from a public URL, similar to a forum. if you want
+                    this data removed, please contact me at contact[at]skysyrup.dev.</p><br>
+                <p>you also pwomise that you won't upload any inflammatory, misleading, falsely fabricated,
+                    site-breaking, homo- trans- xeno- etc-phobic content to the server, lest it will be removed and your
+                    IP blocked. also, please don't try to spam.</p>
+            </div>
+
+
+            <div class="bottomtext">
+                <img src="assets/splitbar.png" alt="-----------------------">
+                <p>This is a random text field. Enable your js, silly!!!</p>
+                <br>
+                <p>best viewed on a 4:19 apple macintosh 2 crimson edition. please switch off airplane mode and enable
+                    boat
+                    mode. this website is not y2k compliant.</p>
+                <br>
+                <img src="assets/allcatsarebeautiful.gif" alt="ALL CATS ARE BEAUTIFUL">
+                <a href="https://maia.crimew.gay/" target="_blank"><img src="assets/maia.crimew.gay.png"
+                        alt="maia.crimew.gay website"></a>
+                <a href="https://ilwag.com/" target="_blank"><img src="assets/ilwagbannersmol.png"
+                        alt="inlovewithaghost website"></a>
+                <a href="https://endeavouros.com/" target="_blank"><img src="assets/endeavouros.png"
+                        alt="endeavouros logo"></a>
+                <a href="https://sapphic.moe"><img src="assets/sapphic.png" alt="sapphic.moe 88x31 redirect" width="88"
+                        height="31" /></a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="pagescript.js"></script>
+</body>
+
+</html>

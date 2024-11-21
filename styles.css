@@ -464,3 +464,33 @@ ul { /* yea yea yea */
   list-style: none;
 
 }
+/* Outer container for grouping comments */
+.comments-container {
+  font-family: '000webfont', 'font', monospace;
+  color: #e6a1cf;
+  font-size: 18px;
+  padding: 20px;
+  margin: auto;
+  max-width: 55%;
+  z-index: 9999;
+  border: 3px solid #e6a1cf; /* Border for the big container */
+  border-radius: 2px; /* Rounded corners for the big container */
+}
+
+/* Individual comment box */
+.comment {
+  margin: 10px 0; /* Spacing between comments */
+  padding: 15px;
+  border: 2px solid #e6a1cf; /* Border for individual comments */
+  border-radius: 1px; /* Rounded corners for comments */
+  color: #e6a1cf; /* Text color */
+}
+
+/* Links inside comments */
+.comment a {
+  color: #e6a1cf; /* Match link color to overall theme */
+}
+
+.comment a:hover {
+  color: #fff; /* Highlight link on hover */
+}

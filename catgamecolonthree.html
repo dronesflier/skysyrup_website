@@ -26,8 +26,8 @@
                 <a href="index.html">home :3</a>
                 <a href="coolthingsimade.html">my stuff</a>
                 <a href="coolthingsingeneral.html">cool things in general >w< </a>
-                <a href="showGuestbook.html">add yourself to the guestbook!</a>
-                <div id="music-player-container">
+                        <a href="showGuestbook.html">add yourself to the guestbook!</a>
+                        <div id="music-player-container">
                             <button id="play-music" class="btn btn-primary">play</button>
                         </div>
             </div>
@@ -42,30 +42,16 @@
                 <button id="next-button" class="btn btn-primary" onclick="startGame()">Next Cat</button>
             </div>
 
-            <div class="bottomtext">
-                <p>wait, you guessed correctly but it told u no?<br>impossible.<br>i would never lie to you.</p>
+            <div id="footer-container"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            </script>
 
-                <img src="assets/splitbar.png" alt="-----------------------">
-                <br>
-
-                <p id="changingtext">This is a random text field. Enable your js, silly!!!</p>
-                <br>
-                <p>best viewed on a 4:19 apple macintosh 2 crimson edition. please switch off airplane mode and enable
-                    boat mode. this website is not y2k compliant.</p>
-
-                <img src="assets/allcatsarebeautiful.gif" alt="ALL CATS ARE BEAUTIFUL">
-
-                <div class="image-container">
-                    <a href="https://maia.crimew.gay/" target="_blank"><img src="assets/maia.crimew.gay.png"
-                            alt="maia.crimew.gay website"></a>
-                    <a href="https://ilwag.com/" target="_blank"><img src="assets/ilwagbannersmol.png"
-                            alt="inlovewithaghost website"></a>
-                    <a href="https://endeavouros.com/" target="_blank"><img src="assets/endeavouros.png"
-                            alt="endeavouros logo"></a>
-                    <a href="https://sapphic.moe"><img src="assets/sapphic.png" width="88" height="31"
-                            alt="sapphic.moe 88x31 redirect"></a>
-                </div>
-            </div>
         </div>
 
         <script src="script.js"></script>

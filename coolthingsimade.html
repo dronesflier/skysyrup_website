@@ -26,7 +26,7 @@
                 <a href="index.html">home :3</a>
                 <a href="coolthingsimade.html">my stuff</a>
                 <a href="coolthingsingeneral.html">cool things in general >w<< </a>
-                <a href="showGuestbook.html">add yourself to the guestbook!</a>
+                        <a href="showGuestbook.html">add yourself to the guestbook!</a>
                         <div id="music-player-container">
                             <button id="play-music" class="btn btn-primary">play</button>
                         </div>
@@ -65,36 +65,23 @@
                 </a>
                 <br>
             </div>
-            <div class="bottomtext">
-                <br>
-                <img src="assets/splitbar.png" alt="-----------------------">
-                <br>
+            <div id="footer-container"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            </script>
 
-                <p id="changingtext">This is a random text field. Enable your js, silly!!!</p>
-                <br>
-                <p>best viewed on a 4:19 apple macintosh 2 crimson edition. please switch off airplane mode and enable
-                    boat
-                    mode. this website is not y2k compliant.</p>
-                <br><br> <!-- me when i css-->
-                <img src="assets/allcatsarebeautiful.gif" alt="ALL CATS ARE BEAUTIFUL">
-
-                <!-- Images Displayed Side by Side -->
-                <div class="image-container">
-                    <a href="https://maia.crimew.gay/" target="_blank"><img src="assets/maia.crimew.gay.png"
-                            alt="maia.crimew.gay website"></a>
-                    <a href="https://ilwag.com/" target="_blank"><img src="assets/ilwagbannersmol.png"
-                            alt="inlovewithaghost website"></a>
-                    <a href="https://endeavouros.com/" target="_blank"><img src="assets/endeavouros.png"
-                            alt="endeavouros logo"></a>
-                    <a href="https://sapphic.moe"><img src="assets/sapphic.png" width="88" height="31" /></a>
-                </div>
-            </div>
         </div>
-        <!-- End Content Container -->
+    </div>
+    <!-- End Content Container -->
 
-        <!-- Move scripts to the end -->
-        <script src="script.js"></script>
-        <script src="pagescript.js"></script>
+    <!-- Move scripts to the end -->
+    <script src="script.js"></script>
+    <script src="pagescript.js"></script>
     </div>
 </body>
 

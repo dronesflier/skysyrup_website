@@ -134,7 +134,6 @@
             height: auto;
             /* Maintain aspect ratio */
         }
-        
     </style>
 </head>
 
@@ -168,7 +167,8 @@
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <label for="crunchy" style="display: block; margin-bottom: 10px; font-family: 'cherish', 'font', monospace; color: #e6a1cf;">
+                        <label for="crunchy"
+                            style="display: block; margin-bottom: 10px; font-family: 'cherish', 'font', monospace; color: #e6a1cf;">
                             Crunchy (Emoji):
                         </label>
                         <select id="crunchy" name="crunchy" style="
@@ -195,8 +195,8 @@
                             <option value="🌍">🌍 teh wolrd</option>
                         </select>
                     </div>
-                    
-                    
+
+
                     <div>
                         <label for="website-link">Website Link:</label>
                         <input type="url" id="website-link" name="websiteLink">
@@ -224,7 +224,8 @@
                     </div>
                 </form>
                 <br><br>
-                <p>by clicking "submit" you agree that the data you have entered will be saved to a server and accessible from a public URL, similar to a forum. if you want
+                <p>by clicking "submit" you agree that the data you have entered will be saved to a server and
+                    accessible from a public URL, similar to a forum. if you want
                     this data removed, please contact me at contact[at]skysyrup.dev.</p><br>
                 <p>you also pwomise that you won't upload any inflammatory, misleading, falsely fabricated,
                     site-breaking, homo- trans- xeno- etc-phobic content to the server, lest it will be removed and your
@@ -232,24 +233,16 @@
             </div>
 
 
-            <div class="bottomtext">
-                <img src="assets/splitbar.png" alt="-----------------------">
-                <p>This is a random text field. Enable your js, silly!!!</p>
-                <br>
-                <p>best viewed on a 4:19 apple macintosh 2 crimson edition. please switch off airplane mode and enable
-                    boat
-                    mode. this website is not y2k compliant.</p>
-                <br>
-                <img src="assets/allcatsarebeautiful.gif" alt="ALL CATS ARE BEAUTIFUL">
-                <a href="https://maia.crimew.gay/" target="_blank"><img src="assets/maia.crimew.gay.png"
-                        alt="maia.crimew.gay website"></a>
-                <a href="https://ilwag.com/" target="_blank"><img src="assets/ilwagbannersmol.png"
-                        alt="inlovewithaghost website"></a>
-                <a href="https://endeavouros.com/" target="_blank"><img src="assets/endeavouros.png"
-                        alt="endeavouros logo"></a>
-                <a href="https://sapphic.moe"><img src="assets/sapphic.png" alt="sapphic.moe 88x31 redirect" width="88"
-                        height="31" /></a>
-            </div>
+            <div id="footer-container"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            </script>
+
         </div>
     </div>
     <script src="script.js"></script>

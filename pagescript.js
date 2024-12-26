@@ -177,13 +177,21 @@ function debounce(func, wait) {
   };
 }
 document.addEventListener("DOMContentLoaded", () => {
-  const audio = new Audio("assets/lofiwebsite1.mp3");
+  let audio; 
   let isPlaying = false;
-  audio.loop = true;
 
   const playButton = document.getElementById("play-music");
 
   playButton.addEventListener("click", () => {
+      if (!audio) {
+          audio = new Audio("assets/lofiwebsite1.mp3");
+          audio.loop = true;
+
+          audio.addEventListener("error", (e) => {
+              console.error("Audio error:", e); // tldr ur fucked
+          });
+      }
+
       if (isPlaying) {
           audio.pause();
           playButton.textContent = "play";
@@ -195,8 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 
-  // Clean up audio when navigating away
-  window.addEventListener("beforeunload", () => {
-      audio.pause();
+  window.addEventListener("beforeunload", () => { // im supposed to do this appearently
+      if (audio) {
+          audio.pause();
+      }
   });
 });

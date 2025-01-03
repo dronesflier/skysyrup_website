@@ -49,6 +49,10 @@
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById('footer-container').innerHTML = data;
+                        // Load and execute footerscript.js after footer content is loaded
+                        const script = document.createElement('script');
+                        script.src = 'footerscript.js';
+                        document.body.appendChild(script);
                     })
                     .catch(error => console.error('Error loading footer:', error));
             </script>

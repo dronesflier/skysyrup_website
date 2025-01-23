@@ -33,15 +33,10 @@ img,
 
 @font-face {
   font-family: '000webfont';
-  /* Name you'll use in CSS */
   src: url('assets/basiic.ttf') format('truetype');
-  /* Path to the font file */
   font-weight: bold;
-  /* Specify the font weight */
   font-style: normal;
-  /* Specify the font style */
   font-display: swap;
-  /* Optional: Improves font loading behavior */
   z-index: 9999;
 }
 @keyframes flicker {

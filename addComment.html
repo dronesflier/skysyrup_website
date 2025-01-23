@@ -150,10 +150,16 @@
         <div class="border right"></div>
 
         <div class="content-container">
-            <div class="sidebar">
-                <div id="music-player-container">
-                    <button id="play-music" class="btn btn-primary">play</button>
-                </div>
+            <div class="sidebar" id="sidebar">
+                <p>could you pls turn on js :3</p>
+                <script>
+                    fetch('sidebar.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('sidebar').innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
+                </script>
             </div>
 
             <div class="titletext">

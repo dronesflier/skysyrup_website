@@ -5,6 +5,17 @@ function copyfunction() {
     alert("Copied the text: " + copyText.value);
 }
 
+function sendNotification() {
+    if (document.getElementById("nfty-input").value.length <= 0) return
+    currentTime = new Date();
+    fetch('https://ntfy.skysyrup.dev/pushFromWebsiteYayyyyy', {
+        method: 'POST',
+        body: "sent at " + currentTime,
+        headers: { 'Title': document.getElementById("nfty-input").value}
+    })
+    
+}
+
 const cats = ['Susie', 'Calvin', 'Helmut'];
 
 const catImages = {

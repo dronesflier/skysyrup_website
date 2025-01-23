@@ -29,6 +29,9 @@
                         .then(response => response.text())
                         .then(data => {
                             document.getElementById('sidebar').innerHTML = data;
+                            const script = document.createElement('script');
+                            script.src = 'footerscript.js';
+                            document.body.appendChild(script);
                         })
                         .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
                 </script>

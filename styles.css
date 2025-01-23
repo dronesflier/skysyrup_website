@@ -200,7 +200,7 @@ img,
 
 /* Container Styling */
 #pixel-art-container {
-  font-family: 'cherish', 'font', monospace;
+  font-family: 'Courier New', 'font';
   position: relative;
   width: 100vw;
   /* Fill the full viewport width */
@@ -318,7 +318,7 @@ img,
 /* Content Styling */
 .content {
   color: #e6a1cf;
-  font-family: 'cherish', 'font', monospace;
+  font-family: 'Courier New', 'font';
   position: absolute;
   top: 32px;
   left: 32px;
@@ -340,8 +340,7 @@ img,
 }
 
 .maintext {
-  font-family: '000webfont', 'font', monospace;
-  text-align: center;
+  font-family: 'Courier New', 'font';
   color: #e6a1cf;
   font-size: 24px;
   padding-top: 60px;
@@ -361,7 +360,7 @@ img,
 }
 
 .smalltext {
-  font-family: '000webfont', 'font', monospace;
+  font-family: 'Courier New', 'font';
   text-align: center;
   color: #e6a1cf;
   font-size: 12px;
@@ -371,7 +370,7 @@ img,
 }
 
 .bottomtext {
-  font-family: '000webfont', 'font', monospace;
+  font-family: 'Courier New', 'font';
   text-align: center;
   color: #e6a1cf;
   font-size: 14px;
@@ -385,24 +384,21 @@ img,
 .sidebar {
   margin-left: 20px;
   margin-top: 20px;
-  width: 200px;
+  width: 50%;
   padding: 20px;
   position: absolute !important;
 }
 
-/* Corrected Sidebar Link Colors */
 .sidebar a {
   display: block;
   color: #e6a1cf;
-  /* Corrected color with '#' */
   padding: 10px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .sidebar a:hover {
   color: #ffe6ea;
-  /* Ensures readability on hover */
 }
 
 /* Button Base Styling */
@@ -413,7 +409,7 @@ img,
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
-  font-family: 'cherish', 'font', monospace;
+  font-family: 'Courier New', 'font';
   /* Ensure it matches your existing font */
 }
 
@@ -504,12 +500,27 @@ img,
 .content-container .sidebar {
   position: absolute;
   top: 20px;
-  width: 200px;
+  width: 20%;
   margin: 0;
   z-index: 3;
   /* Higher z-index to ensure it appears above other content */
 }
 
+.nfty-box {
+  border: 3px solid #4d4d80;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 8px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#nfty-input {
+  color: #e6a1cf;
+  font-size: 14px; 
+  padding: 5px; 
+  border: 1px solid #4d4d80;
+
+}
 /* Adjust Title and Main Text Positioning */
 .content-container .titletext,
 .content-container .maintext,
@@ -526,7 +537,6 @@ img,
 
 .content-container .maintext {
   margin-top: 20px;
-  text-align: center;
 }
 
 /* Bottom Text Positioning */
@@ -539,9 +549,9 @@ img,
 
 /* Preserve Maintext Styling */
 .maintext {
-  font-family: '000webfont', 'font', monospace;
+  font-family: 'Courier New', 'font';
   color: #e6a1cf;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.5;
   z-index: 2;
   /* Ensure it appears above other content */
@@ -649,3 +659,4 @@ ul { /* yea yea yea */
 .comment a:hover {
   color: #fff; /* Highlight link on hover */
 }
+

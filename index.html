@@ -28,21 +28,51 @@
                         .then(response => response.text())
                         .then(data => {
                             document.getElementById('sidebar').innerHTML = data;
+                            const script = document.createElement('script');
+                            script.src = 'js/music.js';
+                            document.body.appendChild(script);
                         })
                         .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
                 </script>
             </div>
 
             <div class="titletext">
-                <h1>WELCOME TO skysyrup's website!!</h1>
+                <h1>skysyrup</h1>
             </div>
 
             <div class="maintext">
-                <p>hello! my name is skysyrup (she/her), and you've found my personal website! i'm so glad you're
-                    here.<br><br>i spend a <i>lot</i> of time on the internet, and i'd like to show off some cool stuff
-                    I've
-                    found once in a while. <br>also, there's some stuff i made i guess</p><br><br>
-                <p>wanna contact me? try contact at skysyrup dot dev! who knows, maybe i'll respond :3</p>
+                <p>hi,<br> my(?) name is skysyrup (she/it), and you've found this personal litle corner of the internet.
+                    peek around, rummage through the drawers, enjoy your stay ^w^
+                    <br>a <i>lot</i> of this one's time is spent on the internet, and sometimes it'll be reposted here
+                    :3
+                    found once in a while. <br>also, there's some stuff it made :b<br><br>
+
+                    if you wanna contact this me, no problem! just email contact[at]skysyrup[dot]dev.
+
+                </p>
+                <div id="nfty-box" class="nfty-box">
+                    <p>send a push notification in real-time directly to her phone!!</p>
+                    <input id="nfty-input" placeholder="meowwww"> <a class="ntfy-send"
+                        onclick="sendNotification()">[send]</a>
+                </div>
+                <p><b>character sheet</b><br><br>
+                    NAME: [multiple]<br>
+                    - ashley (preferred)<br>
+                    - skysyrup<br>
+                    - kirie<br>
+                    - s/n 442811<br>
+                    LOCN: DE<br>
+                    LANG: EN/DE<br>
+                    PRNS: she/it<br>
+                    HIGT: 178cm<br>
+                    BORN: 20.04.200▮<br>
+                    ...<br>
+                    [running out of simplistic traits]<br><br><br>
+                    so basically I am a person(?) that exists(occasionally unwillingly). i guess i'm pretty leftist, and I'm sometimes active politically in my local area. i tend towards anarchistic views though.
+                    <br>
+                    [expand with ramblings soon]
+
+                </p>
             </div>
 
             <div id="footer-container"></div>

@@ -349,6 +349,13 @@ img,
   z-index: 9999;
 }
 
+.maintext iframe {
+  width:100%;
+  height: 55vh;
+  display: block;
+  border: none;
+}
+
 .bottombar {
   margin-bottom: 20px;
   margin-left: 20px;
@@ -479,21 +486,13 @@ img,
 .content-container {
   position: absolute;
   top: 32px;
-  /* Below the top border */
   left: 32px;
-  /* Beside the left border */
   right: 32px;
-  /* Beside the right border */
   bottom: 32px;
-  /* Above the bottom border */
   overflow-y: auto;
-  /* Enables vertical scrolling if content overflows */
   overflow-x: hidden;
-  /* Prevents horizontal scrolling */
   padding: 0;
-  /* Remove default padding */
   z-index: 5;
-  /* Ensure it sits above background elements */
 }
 
 /* Adjust Sidebar Positioning */
@@ -503,7 +502,6 @@ img,
   width: 20%;
   margin: 0;
   z-index: 3;
-  /* Higher z-index to ensure it appears above other content */
 }
 
 .nfty-box {

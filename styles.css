@@ -324,8 +324,7 @@ img,
   left: 32px;
   right: 32px;
   bottom: 32px;
-  /* Add any additional styling for your pixel art content */
-  /* To ensure no scaling, use pixel units or appropriate CSS */
+
 }
 
 .titletext {
@@ -658,3 +657,37 @@ ul { /* yea yea yea */
   color: #fff; /* Highlight link on hover */
 }
 
+.split-layout {
+  /* Make sure the container sits above the background if needed */
+  position: relative;
+  z-index: 2; /* Adjust if your global styles set z-index: -2 */
+  width: 100%; 
+  /* You can add margin-top or padding here if you need spacing */
+}
+
+.split-left {
+  float: left;
+  width: 50%;            /* Adjust width as desired */
+  box-sizing: border-box;
+  padding-right: 10px;   /* Spacing between columns */
+}
+
+.split-right {
+  float: left;
+  width: 50%;            /* Adjust width as desired */
+  box-sizing: border-box;
+  padding-left: 10px;    /* Spacing between columns */
+}
+
+.split-right img {
+  max-width: 100%; 
+  height: auto;
+  display: block;  /* Ensures the image is not inline with text */
+}
+
+/* Clear floats so content below doesn’t wrap under */
+.split-layout::after {
+  content: "";
+  display: block;
+  clear: both;
+}

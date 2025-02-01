@@ -6,14 +6,28 @@ function copyfunction() {
 }
 
 function sendNotification() {
-    if (document.getElementById("nfty-input").value.length <= 0) return
-    currentTime = new Date();
+    if (document.getElementById("nfty-input").value.length <= 0) {
+        return; 
+    }
+    const currentTime = new Date();
     fetch('https://ntfy.skysyrup.dev/pushFromWebsiteYayyyyy', {
         method: 'POST',
         body: "sent at " + currentTime,
-        headers: { 'Title': document.getElementById("nfty-input").value}
+        headers: { 'Title': document.getElementById("nfty-input").value }
     })
-    
+    .then(function(response) {
+        if (response.ok) {
+            document.getElementById("nfty-input").value = "";
+            document.getElementById("ntfy-send").textContent = "[sent]";
+            console.log("sent ntfy :3");
+        } else {
+            document.getElementById("ntfy-send").textContent = "[sending failed >~<]";
+        }
+    })
+    .catch(function(error) {
+        console.error("Error:", error);
+        document.getElementById("ntfy-send").textContent = "[sending failed >~<]";
+    });
 }
 
 const cats = ['Susie', 'Calvin', 'Helmut'];

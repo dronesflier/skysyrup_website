@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>skysyrup's website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="pixel-art-container">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <div class="border top"></div>
+        <div class="border bottom"></div>
+        <div class="border left"></div>
+        <div class="border right"></div>
+
+        <div class="content-container">
+            <div class="sidebar" id="sidebar">
+                <p>could you pls turn on js :3</p>
+                <script>
+                    fetch('sidebar.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('sidebar').innerHTML = data;
+                            const script = document.createElement('script');
+                            script.src = 'js/music.js';
+                            document.body.appendChild(script);
+                        })
+                        .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
+                </script>
+            </div>
+
+            <div class="titletext">
+                <h1>hosted services for your enjoyment</h1>
+
+            </div>
+
+            <div class="maintext">
+                <p>i host several services for visitors and regulars alike to use. please note that while I collect the minimal amount of data required to keep these services operational, and essentially nothing gets stored from my side except your entered information and occasionally your IP for ~24h to prevent spam, you should still read the services' dedicated Privacy page ^w^</p>
+                <br>
+                <p>if you have any questions or concerns, please don't hesitate to contact me at contact[at]skysyrup[dot]dev</p>
+                <br>
+                <a href="https://sx.skysyrup.dev" alt="skysyrup link">sx.skysyrup.dev</a> selfhosted SearxNG instance. <br><br>
+                <a href="https://ntfy.skysyrup.dev" alt="skysyrup link">ntfy.skysyrup.dev</a> push notification service. the client does not store data on the server. NTFY notification lists are PUBLIC unless set otherwise.<br><br>
+                <br>
+                <br>
+                <p>...more to come :3</p>
+            </div>
+
+            <div id="footer-container"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                        // Load and execute footerscript.js after footer content is loaded
+                        const script = document.createElement('script');
+                        script.src = 'footerscript.js';
+                        document.body.appendChild(script);
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            </script>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="pagescript.js"></script>
+</body>
+
+</html>

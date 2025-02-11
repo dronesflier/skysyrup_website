@@ -660,7 +660,7 @@ ul { /* yea yea yea */
 .split-layout {
   position: relative;
   z-index: 2; 
-  width: 50%; 
+  width: 60%; 
 }
 
 .split-left {
@@ -679,6 +679,7 @@ ul { /* yea yea yea */
   max-width: 100%; 
 }
 
+/* Clear floats so content below doesn’t wrap under */
 .split-layout::after {
   content: "";
   display: block;

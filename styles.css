@@ -658,34 +658,27 @@ ul { /* yea yea yea */
 }
 
 .split-layout {
-  /* Make sure the container sits above the background if needed */
   position: relative;
-  z-index: 2; /* Adjust if your global styles set z-index: -2 */
-  width: 100%; 
-  /* You can add margin-top or padding here if you need spacing */
+  z-index: 2; 
+  width: 50%; 
 }
 
 .split-left {
   float: left;
-  width: 50%;            /* Adjust width as desired */
+  width: 50%;            
   box-sizing: border-box;
-  padding-right: 10px;   /* Spacing between columns */
+  padding-right: 10px;   
 }
 
 .split-right {
   float: left;
-  width: 50%;            /* Adjust width as desired */
-  box-sizing: border-box;
-  padding-left: 10px;    /* Spacing between columns */
+
 }
 
 .split-right img {
   max-width: 100%; 
-  height: auto;
-  display: block;  /* Ensures the image is not inline with text */
 }
 
-/* Clear floats so content below doesn’t wrap under */
 .split-layout::after {
   content: "";
   display: block;

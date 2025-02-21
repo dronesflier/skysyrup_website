@@ -20,7 +20,6 @@
         <div class="border left"></div>
         <div class="border right"></div>
 
-        <!-- New Content Container -->
         <div class="content-container">
             <div class="sidebar" id="sidebar">
                 <p>could you pls turn on js :3</p>
@@ -57,7 +56,6 @@
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById('footer-container').innerHTML = data;
-                        // Load and execute footerscript.js after footer content is loaded
                         const script = document.createElement('script');
                         script.src = 'footerscript.js';
                         document.body.appendChild(script);
@@ -66,7 +64,6 @@
             </script>
 
         </div>
-        <!-- End of Content Container -->
 
     </div>
     <script src="script.js"></script>
@@ -85,7 +82,7 @@
                 }
                 const data = await response.json();
                 console.log(data);
-                return data.items; // Assuming your API returns { items: [...] }
+                return data.items; 
             } catch (error) {
                 console.error(error);
                 showError('Error loading comments.');
@@ -96,10 +93,9 @@
         function appendComments(comments) {
             const container = document.getElementById('comments-container');
             comments.forEach(comment => {
-                // Check if all required fields are not empty
-                if (!comment.name || !comment.crunchy || !comment.message) {
+                if (!comment.name || !comment.message) {
                     console.warn("Skipping comment due to missing fields:", comment);
-                    return; // Skip this comment if any field is empty
+                    return;
                 }
                 const commentDiv = document.createElement('div');
                 commentDiv.className = 'comment';

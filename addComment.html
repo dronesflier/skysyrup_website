@@ -22,7 +22,6 @@
         async function submitComment(event) {
             event.preventDefault();
 
-            // Validate that the required fields are filled
             const nameField = document.getElementById('name');
             const messageField = document.getElementById('message');
 
@@ -49,6 +48,7 @@
             };
 
             try {
+		console.log(commentData);
                 const response = await fetch('https://guestbook.skysyrup.dev/comments', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -68,71 +68,50 @@
             }
         }
 
-        // Fetch a CAPTCHA when the page loads
         window.onload = fetchCaptcha;
     </script>
     <style>
-        /* Input and Textarea Base Styling */
         input[type="text"],
         input[type="url"],
         input[type="email"],
         textarea {
             background-color: #131626;
-            /* Dark background */
             color: #e6a1cf;
-            /* Light text */
             border: 2px solid #4d4d80;
-            /* Medium Blue/Purple border */
             font-family: '000webfont', 'font', monospace;
             font-size: 16px;
             padding: 10px;
             width: calc(100% - 24px);
-            /* Adjusted for padding and border */
             border-radius: 5px;
-            /* Slightly rounded edges */
             margin-bottom: 10px;
-            /* Space between fields */
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        /* Input and Textarea Focus Styling */
         input[type="text"]:focus,
         input[type="url"]:focus,
         input[type="email"]:focus,
         textarea:focus {
             border-color: #e6a1cf;
-            /* Light Pink on focus */
             box-shadow: 0 0 5px #e6a1cf;
-            /* Subtle glow effect */
             outline: none;
-            /* Remove default focus outline */
         }
 
-        /* Textarea Specific Styling */
         textarea {
             min-height: 100px;
-            /* Set a reasonable minimum height */
             resize: vertical;
-            /* Allow vertical resizing only */
         }
 
-        /* Placeholder Text Styling */
         input::placeholder,
         textarea::placeholder {
             color: #4d4d80;
-            /* Subtle hint color */
             opacity: 0.8;
-            /* Slightly transparent */
         }
 
         #captcha-img {
             display: block;
             margin: 10px auto;
-            /* Centers the image horizontally */
             max-width: 100%;
-            /* Ensures the image is responsive */
             height: auto;
-            /* Maintain aspect ratio */
         }
     </style>
 </head>
@@ -248,7 +227,6 @@
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById('footer-container').innerHTML = data;
-                        // Load and execute footerscript.js after footer content is loaded
                         const script = document.createElement('script');
                         script.src = 'footerscript.js';
                         document.body.appendChild(script);

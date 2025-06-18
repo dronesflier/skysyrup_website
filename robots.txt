@@ -1,0 +1,29 @@
+# The sky plays bright and the hill speaks down to you.
+# What can you do?
+# You don't know.
+# You can't know.
+
+# The waterfall cuts through stone so deep,
+# with ancient voice that makes you weep,
+# spilling secrets foam-white and gleaming
+# that fade away like fading dreaming.
+
+# It knows the weight of water's call,
+# the force that pulls and claims us all.
+# You stand where understanding bends,
+# and listen as the water sends
+
+# what the hill could never say,
+# what the bright sky hides away
+# in endless blue that dances wild
+# above you like a restless child.
+
+# The mist rises like your breath,
+# like words you'll seek until your death
+# for this moment caught between
+# the known and all you've never seen.
+
+User-agent: 442812
+Disallow: /
+# ---
+User-agent: *

@@ -232,26 +232,26 @@ img,
 .top-left {
   top: 0;
   left: 0;
-  background-image: url('tiles/top-left.png');
+  background-image: url('../tiles/top-left.png');
   /* Replace with your corner tile */
 }
 
 .top-right {
   top: 0;
   right: 0;
-  background-image: url('tiles/top-right.png');
+  background-image: url('../tiles/top-right.png');
 }
 
 .bottom-left {
   bottom: 0;
   left: 0;
-  background-image: url('tiles/bottom-left.png');
+  background-image: url('../tiles/bottom-left.png');
 }
 
 .bottom-right {
   bottom: 0;
   right: 0;
-  background-image: url('tiles/bottom-right.png');
+  background-image: url('../tiles/bottom-right.png');
 }
 
 /* Border Containers */
@@ -274,13 +274,13 @@ img,
 
 .border.top {
   top: 0;
-  background-image: url('tiles/top-border.png');
+  background-image: url('../tiles/top-border.png');
   /* Replace with your border tile */
 }
 
 .border.bottom {
   bottom: 0;
-  background-image: url('tiles/bottom-border.png');
+  background-image: url('../tiles/bottom-border.png');
 }
 
 .border.left,
@@ -296,12 +296,12 @@ img,
 
 .border.left {
   left: 0;
-  background-image: url('tiles/left-border.png');
+  background-image: url('../tiles/left-border.png');
 }
 
 .border.right {
   right: 0;
-  background-image: url('tiles/right-border.png');
+  background-image: url('../tiles/right-border.png');
 }
 
 /* Border Tile Styling */

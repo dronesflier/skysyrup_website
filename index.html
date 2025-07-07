@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>skysyrup's website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -97,7 +97,7 @@
                         document.getElementById('footer-container').innerHTML = data;
                         // Load and execute footerscript.js after footer content is loaded
                         const script = document.createElement('script');
-                        script.src = 'footerscript.js';
+                        script.src = 'js/footerscript.js';
                         document.body.appendChild(script);
                     })
                     .catch(error => console.error('Error loading footer:', error));
@@ -107,8 +107,8 @@
         <!-- End of Content Container -->
 
     </div>
-    <script src="script.js"></script>
-    <script src="pagescript.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/pagescript.js"></script>
 </body>
 
 </html>

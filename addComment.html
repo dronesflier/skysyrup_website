@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>submit guestbook entry to skysyrup.dev</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script>
         async function fetchCaptcha() {
             try {
@@ -137,7 +137,7 @@
                         .then(data => {
                             document.getElementById('sidebar').innerHTML = data;
                             const script = document.createElement('script');
-                            script.src = 'footerscript.js';
+                            script.src = 'js/footerscript.js';
                             document.body.appendChild(script);
                         })
                         .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
@@ -228,7 +228,7 @@
                     .then(data => {
                         document.getElementById('footer-container').innerHTML = data;
                         const script = document.createElement('script');
-                        script.src = 'footerscript.js';
+                        script.src = 'js/footerscript.js';
                         document.body.appendChild(script);
                     })
                     .catch(error => console.error('Error loading footer:', error));
@@ -236,8 +236,8 @@
 
         </div>
     </div>
-    <script src="script.js"></script>
-    <script src="pagescript.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/pagescript.js"></script>
 </body>
 
 </html>

@@ -4,8 +4,8 @@
 <head>
     <title>frens <3 Minecraft Server</title>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
-            <link rel="stylesheet" type="text/css" href="styles.css">
-            <link rel="icon" type="image/x-icon" href="cloud.png">
+            <link rel="stylesheet" type="text/css" href="css/styles.css">
+            <link rel="icon" type="image/x-icon" href="assets/cloud.png">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                         .then(data => {
                             document.getElementById('sidebar').innerHTML = data;
                             const script = document.createElement('script');
-                            script.src = 'footerscript.js';
+                            script.src = 'js/footerscript.js';
                             document.body.appendChild(script);
                         })
                         .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
@@ -100,7 +100,7 @@
                         document.getElementById('footer-container').innerHTML = data;
                         // Load and execute footerscript.js after footer content is loaded
                         const script = document.createElement('script');
-                        script.src = 'footerscript.js';
+                        script.src = 'js/footerscript.js';
                         document.body.appendChild(script);
                     })
                     .catch(error => console.error('Error loading footer:', error));
@@ -110,8 +110,8 @@
         <!-- End Content Container -->
 
         <!-- Move scripts to the end -->
-        <script src="script.js"></script>
-        <script src="pagescript.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/pagescript.js"></script>
     </div>
 </body>
 

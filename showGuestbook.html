@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>skysyrup's website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -29,7 +29,7 @@
                         .then(data => {
                             document.getElementById('sidebar').innerHTML = data;
                             const script = document.createElement('script');
-                            script.src = 'footerscript.js';
+                            script.src = 'js/footerscript.js';
                             document.body.appendChild(script);
                         })
                         .catch(error => console.error('Error loading sidebar!! pls enable js >~<', error));
@@ -57,7 +57,7 @@
                     .then(data => {
                         document.getElementById('footer-container').innerHTML = data;
                         const script = document.createElement('script');
-                        script.src = 'footerscript.js';
+                        script.src = 'js/footerscript.js';
                         document.body.appendChild(script);
                     })
                     .catch(error => console.error('Error loading footer:', error));
@@ -66,8 +66,8 @@
         </div>
 
     </div>
-    <script src="script.js"></script>
-    <script src="pagescript.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/pagescript.js"></script>
     <script>
         const API_URL = 'https://guestbook.skysyrup.dev/comments';
         let currentPage = 0;

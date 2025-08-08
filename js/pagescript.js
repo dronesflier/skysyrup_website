@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startY = Math.floor(Math.random() * (windowHeight - 64) + 32);
 
     const img = document.createElement('img');
-    img.src = 'assets/comet.gif?cacheBust=' + new Date().getTime();
+    img.src = 'assets/comet.gif';
     img.style.width = `${TILE_SIZE * 2}px`; // Use scaling logic similar to stars
     img.style.height = 'auto'; // Maintain aspect ratio
     img.style.position = 'absolute';
@@ -137,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
     img.style.top = startY + 'px';
     img.style.zIndex = '-1';
     img.classList.add('comet');
+
+    img.onload = () => {
+      img.src = img.src;
+    };
 
     contentContainer.appendChild(img);
 

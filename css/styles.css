@@ -503,21 +503,64 @@ img,
   z-index: 3;
 }
 
-.nfty-box {
+/* 3DS Status Box (right side) */
+.statusbox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20%;
+  padding: 16px;
   border: 3px solid #4d4d80;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 8px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-#nfty-input {
   color: #e6a1cf;
-  font-size: 14px; 
-  padding: 5px; 
-  border: 1px solid #4d4d80;
-
+  background: #131626;
+  font-family: '000webfont', 'Courier New', monospace;
+  z-index: 3;
 }
+
+.statusbox .statusbox-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.statusbox .statusbox-header img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+}
+
+.statusbox .statusbox-title {
+  font-size: 18px;
+}
+
+.statusbox .sysinfo-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.statusbox .sysinfo-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 14px;
+}
+
+.statusbox .muted {
+  opacity: 0.85;
+  font-size: 13px;
+}
+
+/* Ensure it sits above content similarly to sidebar */
+.content-container .statusbox { z-index: 3; }
+
+/* Hide status box on small screens */
+@media (max-width: 900px) {
+  .statusbox { display: none; }
+}
+
 /* Adjust Title and Main Text Positioning */
 .content-container .titletext,
 .content-container .maintext,
@@ -685,3 +728,89 @@ ul { /* yea yea yea */
   display: block;
   clear: both;
 }
+
+/* Mobile-friendly enhancements */
+img, video { max-width: 100%; height: auto; }
+
+/* Use dynamic viewport height on mobile to avoid URL bar jumps */
+#pixel-art-container { height: 100dvh; min-height: 100dvh; }
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 8px 12px;
+  font-family: '000webfont', 'Courier New', monospace;
+  font-size: 16px;
+  color: #e6a1cf;
+  background: #131626;
+  border: 2px solid #4d4d80;
+  border-radius: 4px;
+  z-index: 10001;
+  display: none; /* shown on small screens */
+  transition: left 0.25s ease, transform 0.25s ease;
+}
+
+/* Off-canvas sidebar for mobile */
+@media (max-width: 900px) {
+  .content-container { padding-top: 8px; }
+
+  .sidebar-toggle { display: inline-block; }
+
+  .content-container .sidebar {
+    position: fixed !important;
+    top: 32px;
+    left: 0;
+    bottom: 32px;
+    width: 82vw;
+    max-width: 320px;
+    padding: 16px;
+    background: #131626;
+    border-right: 3px solid #4d4d80;
+    overflow-y: auto;
+    transform: translateX(-110%);
+    transition: transform 0.25s ease;
+    z-index: 9998;
+  }
+  body.sidebar-open .content-container .sidebar { transform: translateX(0); }
+
+  /* When menu is open, move toggle button to the right of the drawer */
+  body.sidebar-open .sidebar-toggle {
+    position: fixed;
+    top: 16px;
+    left: min(calc(82vw + 16px), calc(100vw - 64px));
+    z-index: 10002;
+  }
+
+  /* Stack title and text, widen readable width */
+  .titletext, .maintext, .bottomtext, .comments-container { max-width: 94%; padding: 0 8px; }
+  .titletext { font-size: 22px; padding-top: 48px; }
+  .maintext { font-size: 16px; line-height: 1.6; }
+  .bottomtext { font-size: 14px; }
+
+  /* Split layout stacks vertically */
+  .split-layout { width: 100%; }
+  .split-left, .split-right { float: none; width: 100%; padding-right: 0; }
+  .split-right { margin-top: 12px; text-align: center; }
+
+  /* Sidebar links easier to tap */
+  .sidebar a { padding: 12px; font-size: 18px; }
+
+  /* NTFY box controls fit small screens */
+  .nfty-box { padding: 10px; }
+  .nfty-box p { margin-bottom: 8px; }
+  #nfty-input { width: 100%; font-size: 16px; }
+  .ntfy-send { display: inline-block; margin-top: 8px; padding: 6px 10px; border: 1px solid #4d4d80; }
+
+  /* Dynmap iframe smaller on phones */
+  .dynmap-container iframe { height: 55vh; }
+}
+
+/* Tablet-ish refinements */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .titletext, .maintext, .bottomtext, .comments-container { max-width: 70%; }
+  .split-layout { width: 80%; }
+}
+
+/* Desktop keeps existing layout */
